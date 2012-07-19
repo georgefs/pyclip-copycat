@@ -17,8 +17,7 @@ system clipboard. To install the library, download the code and run
 	# useful for dealing with data copied from spreadsheets
 	data = clipboard.paste_table()
 
-Note: I don't actually have a Mac to test things on, so if you are using Mac
-OS X and you find that the code is not working, please patch it and send a 
-pull request.
+Note: If you are using this on Linux, make sure you have the xclip 
+program installed.
 
 PyClip is release under an MIT license, reproduced in LICENSE.
