@@ -20,6 +20,8 @@ def build_params():
     if platform.system() == 'Windows':
         params['scripts'] = ['paste.exe']
 
+    return params
+
 setup(
     **build_params()
 )
