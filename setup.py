@@ -7,7 +7,7 @@ import platform
 def build_params():
     params = {
       'name':'pyclip',
-      'version':'0.1',
+      'version':'0.2',
       'description':'easily interact with clipboard from Python',
       'author':'Zhehao Mao',
       'author_email':'zhehao.mao@gmail.com',
