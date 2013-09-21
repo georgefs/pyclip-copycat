@@ -17,13 +17,22 @@ COPY_CMD = COMMAND_MAPPING.get(SYSTEM).get('COPY_CMD')
 
 
 def paste(selection=None):
-	pipe = subprocess.Popen(PASTE_CMD, stdout=subprocess.PIPE)
-	outdata, errdata = pipe.communicate()
-	return outdata
+    with open(os.devnull, 'wb') as devnull:
+        pipe = subprocess.Popen(PASTE_CMD, stdout=subprocess.PIPE, stderr=devnull)
+        outdata, errdata = pipe.communicate()
+    if pipe.returncode:
+        return False
+    else:
+        return outdata
 
 def copy(text):
-	pipe = subprocess.Popen(COPY_CMD, stdin=subprocess.PIPE)
-	pipe.communicate(text)
+    with open(os.devnull, 'wb') as devnull:
+        pipe = subprocess.Popen(COPY_CMD, stdin=subprocess.PIPE, stderr=devnull)
+        pipe.communicate(text)
+    if pipe.returncode:
+        return False
+    else:
+        return True
 
 def paste_table():
 	text = paste()
