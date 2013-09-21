@@ -2,14 +2,19 @@ import subprocess
 import csv
 import os
 
-OS=os.uname()[0]
+import platform
 
-if OS=='Linux':
-	PASTE_CMD = ['xclip', '-o', '-selection', 'clipboard']
-	COPY_CMD = ['xclip', '-selection', 'clipboard']
-elif OS=='Darwin':
-	PASTE_CMD = ['pbpaste']
-	COPY_CMD = ['pbcopy']
+SYSTEM = platform.system()
+
+COMMAND_MAPPING = {
+    'Linux': {"PASTE_CMD": ['xclip', '-o', '-selection', 'clipboard'], 'COPY_CMD': ['xclip', '-selection', 'clipboard']},
+    'Darwin': {"PASTE_CMD": ['pbpaste'], 'COPY_CMD': ['pbcopy']},
+    'Windows': {"PASTE_CMD": ['paste'], 'COPY_CMD': ['clip']},
+}
+
+PASTE_CMD = COMMAND_MAPPING.get(SYSTEM).get('PASTE_CMD')
+COPY_CMD = COMMAND_MAPPING.get(SYSTEM).get('COPY_CMD')
+
 
 def paste(selection=None):
 	pipe = subprocess.Popen(PASTE_CMD, stdout=subprocess.PIPE)
