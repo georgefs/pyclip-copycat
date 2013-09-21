@@ -1,7 +1,7 @@
 # PyClip
 
 PyClip wraps the `xclip` command-line program on Linux and the `pbcopy` and 
-`pbpaste` programs on Mac OS X to provide an easy python interface to the 
+`pbpaste` programs on Mac OS X and the `clip` and `paste` on Windows to provide an easy python interface to the 
 system clipboard. To install the library, download the code and run 
 `sudo python setup.py install`. You can then use the library like so
 
