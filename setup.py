@@ -7,7 +7,7 @@ import platform
 def build_params():
     params = {
       'name':'pyclip-copycat',
-      'version':'0.2',
+      'version':'1.0',
       'description':'easily interact with clipboard from Python fork from pyclip',
       'author':'george.li',
       'author_email':'goblin.george@gmail.com',
