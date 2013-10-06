@@ -6,12 +6,12 @@ import platform
 
 def build_params():
     params = {
-      'name':'pyclip',
+      'name':'pyclip-copycat',
       'version':'0.2',
-      'description':'easily interact with clipboard from Python',
-      'author':'Zhehao Mao',
-      'author_email':'zhehao.mao@gmail.com',
-      'url':'https://github.com/zhemao/pyclip',
+      'description':'easily interact with clipboard from Python fork from pyclip',
+      'author':'george.li',
+      'author_email':'goblin.george@gmail.com',
+      'url':'https://github.com/georgefs/pyclip',
       'py_modules':['clipboard'],
 	  'license':'MIT',
     }
