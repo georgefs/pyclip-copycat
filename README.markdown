@@ -1,4 +1,4 @@
-# PyClip-copycat fork from https://github.com/zhemao/pyclip
+# PyClip
 
 PyClip wraps the `xclip` command-line program on Linux and the `pbcopy` and 
 `pbpaste` programs on Mac OS X and the `clip` and `paste` on Windows to provide an easy python interface to the 
